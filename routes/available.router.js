@@ -37,17 +37,17 @@ router.put("/rentingBike", async(req, res)=>{
         .then(data => {
             if (!data) {
                 res.status(404).send({
-                    message: `Cannot delete Bicycle with id=${id}. Maybe Bicycle was not found!`
+                    message: `Cannot update Bicycle with id=${id}. Maybe Bicycle was not found!`
                 });
             } else {
                 res.send({
-                    message: "Bicycle was deleted successfully!"
+                    message: "Bicycle was update successfully!"
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Could not delete Bicycle with id=" + id
+                message: "Could not update Bicycle with id=" + id
             });
         });
 });
