@@ -9,41 +9,7 @@ import {UserListAvailableBike} from "./components/UserListAvailableBike";
 class App extends Component{
   constructor(props){
     super(props);
-    this.state = {
-      text: "Click me!",
-      additional: "", tamp: "",
-      active: false
-    }
-
-    this.handlerClickBtn = this.handlerClickBtn.bind(this);
   }
-
-  componentDidMount() {
-    fetch("/")
-        .then(res => res.text())
-        .then(res => this.setState({additional: res, tamp: res}))
-        .catch(err => err);
-  }
-
-  handlerClickBtn(){
-    this.setState(() =>{
-          if(this.state.active){
-            return {
-              text: "Click me!",
-              active: !this.state.active,
-              additional: this.state.tamp
-            }
-          }else{
-            return {
-              text: "Unclick me!",
-              active: !this.state.active,
-              additional: ""
-            }
-          }
-    }
-    );
-  }
-
 
     render() {
     return (
